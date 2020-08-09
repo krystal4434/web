@@ -1,0 +1,56 @@
+body { width: 100%; font-size: 100%; }
+a { color: inherit; }
+a:hover,
+a:focus{ color: rgb(31, 152, 245); transition: color .5s; }
+header,
+footer,
+section,
+article,
+.row { width: 100%; max-width: 1430px; margin-left: auto; margin-top: 0; margin-right: auto; margin-bottom: 0; padding: 0 10px; box-sizing: border-box; }
+.row::before,
+.row::after{ content: ""; display: table; }
+
+
+
+/* header */
+.header_wrap { width: 100%; background-color: rgba(255,255,255, .8); position: fixed; left: 0; top: 0; right: 0; z-index: 100; }
+header h1 { position: absolute; line-height: 50px; font-size: 1.2em; font-weight: 500;}
+header h1 a { text-decoration: none; }
+header nav { margin-left: 90px; line-height: 50px; overflow: hidden; }
+header nav li { float: left; margin-left: 20px; font-size: 15px; color: #888; }
+
+/* footer */
+.footer_wrap { width: 100%; padding: 40px 0; background-color: rgb(19, 24, 27); color: rgb(190, 198, 204); font-size: 12px; text-align: center; }
+.footer_wrap a { color: rgb(31, 152, 245); }
+
+/* row */
+.row_wrap { padding: 40px 0; width: 100%; background-color: rgb(208, 234, 255); font-size: 13px; }
+
+/* content */
+.cont_wrap { padding: 40px 0; width: 100%; }
+
+/* index */
+
+.row_wrap.index section { columns: 4; }
+.row_wrap.index section h4 { margin-top: 0; margin-bottom: 1em; font-size: 15px; }
+.row_wrap.index section li { color: #666; line-height: 1.2; }
+.row_wrap.index section a { color: rgb(31, 152, 245); }
+
+.cont_wrap.index { columns: 2; }
+.cont_wrap.index .index_text { margin-bottom: 1em; column-span: all; text-align: center; font-size: 1.6em; }
+
+.main_ban_wrap { position: relative; margin-top: 50px; height: 80vh; min-height: 480px; background-color: rgb(245, 245, 245); }
+.main_ban_wrap section { position: absolute; left: 50%; top:50%; text-align: center; transform: translate(-50%, -50%); }
+.main_ban_wrap section h2 { margin-bottom: 2em; color: #666; font-size: 2em; font-weight: 500; }
+
+@media only screen and (max-width: 768px){
+    .row_wrap.index section { columns: 2; }
+    .row_wrap.index section h4 { margin-top: 1em; }
+}
+
+@media only screen and (max-width: 425px){
+    .cont_wrap.index { columns: 1; }
+
+    .row_wrap.index section { columns: 1; }
+    .row_wrap.index section h4 { margin-top: 1em; }
+}
