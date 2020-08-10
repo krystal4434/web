@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/krystal.css">
+    <link rel="stylesheet" href="../../css/portfolio.css">
+
+    <title>Krystal Web Page</title>
+</head>
+
+<body>
+    <div class="header_wrap">
+        <header class="row large12">
+            <h1><a href="/web/">Krystal</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <div class="sub_wrap">
+        <section>
+            <h2>Ajax Single Page Application</h2>
+            <p>Ajax를 이용한 싱글 페이지 어플리케이션으로 공유가능한 url 및 SEO 비활성화</p>
+        </section>
+    </div>
+    <div class="cont_wrap row">
+        <section>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script>
+                function fetchPage(name, self) {
+                    fetch(name).then(function (response) {
+                        response.text().then(function (text) {
+                            document.querySelector("#ajax_content").innerHTML = text;
+                        });
+                    });
+                }
+
+                function init() {
+                    fetch("list").then(function (response) {
+                        response.text().then(function (text) {
+                            const items = text.split(",");
+                            let i = 0,
+                                tags = "";
+                            while (i < items.length) {
+                                let item = items[i];
+                                item = item.trim();
+                                const tag = `<li><a class="cp" onclick="fetchPage('${item}',this)">${item}</a></li>`
+                                tags = tags + tag;
+                                i = i + 1;
+                            }
+                            document.querySelector("#ajax_tab").innerHTML = tags;
+                        });
+                    });
+                    fetchPage("MDN");
+                }
+                init();
+            </script>
+            <ul id="ajax_tab"></ul>
+            <article id="ajax_content">
+                <p>Ajax fetch</p>
+            </article>
+        </section>
+    </div>
+    <div class="row_wrap">
+        <section>
+            <article>
+                <h4>Ajax</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum, quis architecto eligendi
+                    temporibus illo iure amet minus voluptates unde sint asperiores provident sequi similique voluptate
+                    accusamus distinctio ipsam repellendus assumenda, maiores beatae? Similique magni sed consectetur
+                    delectus accusamus error enim id iure voluptatibus aliquid, repellendus hic fugiat recusandae
+                    aperiam aut.</p>
+                <a href="#" class="lbtn_blue">Button</a>
+            </article>
+        </section>
+    </div>
+    <div class="footer_wrap">
+        <footer>
+            <p>Author : Krystal</p>
+            <p><a href="mailto:krystal4434@gmail.com">krystal4434@gmail.com</a></p>
+        </footer>
+    </div>
+</body>
+
+</html>

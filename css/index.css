@@ -1,0 +1,23 @@
+.row_wrap.index section { columns: 4; text-align: left; }
+.row_wrap.index section h4 { margin-top: 0; margin-bottom: 1em; font-size: 15px; }
+.row_wrap.index section li { color: #666; line-height: 1.2; }
+.row_wrap.index section a { color: rgb(31, 152, 245); }
+
+.cont_wrap.index { columns: 2; }
+.cont_wrap.index .index_text { margin-bottom: 2em; column-span: all; text-align: center; font-size: 1.6em; }
+
+.main_ban_wrap { position: relative; margin-top: 50px; height: 80vh; min-height: 480px; background-color: rgb(245, 245, 245); }
+.main_ban_wrap section { position: absolute; left: 50%; top:50%; text-align: center; transform: translate(-50%, -50%); }
+.main_ban_wrap section h2 { margin-bottom: 2em; color: #666; font-size: 2em; font-weight: 500; }
+
+@media only screen and (max-width: 768px){
+    .row_wrap.index section { columns: 2; }
+    .row_wrap.index section h4 { margin-top: 1em; }
+}
+
+@media only screen and (max-width: 425px){
+    .cont_wrap.index { columns: 1; }
+
+    .row_wrap.index section { columns: 1; }
+    .row_wrap.index section h4 { margin-top: 1em; }
+}
