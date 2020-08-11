@@ -1,3 +1,19 @@
+/* header */
+body.portfolio header { max-width: 100%; height: 50px;}
+
+/* footer */
+body.portfolio .footer_wrap { position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; padding: 10px 0; }
+body.portfolio .footer_wrap p { display: inline; padding: 0 20px; }
+
+/* aside */
+body.portfolio aside { 
+    position: fixed; left: 0; top: 0; bottom: 0; z-index: 10; 
+    width: 20%; min-width: 120px; height: 100vh; box-sizing: border-box; 
+    padding: 50px 10px; background-color: rgb(245, 245, 245); font-size: .8em;
+}
+body.portfolio aside>div { padding: 10px; }
+body.portfolio aside h3 { margin-bottom: 10px; }
+
 #ajax_tab { text-align: center; }
 #ajax_tab li { display: inline-block; padding: 8px 12px; }
 #ajax_tab li a { text-decoration: none; }
